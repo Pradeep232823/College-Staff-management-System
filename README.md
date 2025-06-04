@@ -1,1 +1,0 @@
-# College-Staff-management-System
