@@ -1,0 +1,15 @@
+#database codes
+
+CREATE DATABASE IF NOT EXISTS college_staff_db;
+USE college_staff_db;
+CREATE TABLE IF NOT EXISTS admin (
+    admin_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL );
+CREATE TABLE IF NOT EXISTS staff (
+    staff_id INT PRIMARY KEY, name VARCHAR(100) NOT NULL, gender VARCHAR(10), phone VARCHAR(15), 
+    email VARCHAR(100) UNIQUE, qualification VARCHAR(100), doj DATE, department VARCHAR(50), salary DECIMAL(10,2),
+    username VARCHAR(50) UNIQUE, password VARCHAR(100), assigned_class VARCHAR(100), monthly_attendance INT DEFAULT 0
+);
+-- Insert a default admin user (change password as needed)
+INSERT INTO admin (username, password) VALUES ('admin', 'admin123');
